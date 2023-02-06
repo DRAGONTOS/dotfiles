@@ -1,0 +1,38 @@
+#---System Control---#
+# Restart hotkey damon
+super + shift + x
+  killall sxhkd && sxhkd &
+super + Return
+  alacritty &
+super + b
+  firefox &
+XF86MonBrightnessUp
+  light -A 10 &
+XF86MonBrightnessDown
+  light -U 10 &
+XF86Sleep
+  ~/.local/bin/sysact.sh
+## Volume control
+XF86AudioRaiseVolume
+  pactl set-sink-volume 0 +10%
+XF86AudioLowerVolume
+  pactl set-sink-volume 0 -10%
+XF86AudioMute
+  pactl set-sink-mute 0 toggle
+super + F8
+  alacritty -e pulsemixer
+## ?
+super + shift + F8
+  alacritty -e htop &
+super + F10
+  alacritty -e sudo dmenumount &
+super + shift + F10
+  alacritty -e sudo dmenuumount &
+super + F7
+  obs &
+super + shift + Up
+  ~/.local/bin/volumectl.sh
+super + shift + a
+  ~/.local/bin/application
+super + shift + BackSpace
+  ~/.local/bin/sysact.sh
