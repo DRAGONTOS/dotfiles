@@ -1,0 +1,17 @@
+{
+  "browser": {
+    "command": "firefox-esr",
+    "animation": "fromTop",
+    "margin": 80
+  },
+  "term": {
+    "command": "kitty --class kitty-dropterm",
+    "animation": "fromTop",
+    "margin": 200
+  },
+  "pipe": {
+    "command": "kitty --class kitty-droppipe",
+    "animation": "fromTop",
+    "margin": 200
+  }
+}

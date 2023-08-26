@@ -1,5 +1,0 @@
-alias ls='exa -la'
-alias cat='bat'
-alias update='sudo nala update && sudo nala upgrade -y'
-alias sftp-i5='sftp -P 26 play.meadowsnetwork.tk'
-alias sftp-xeon='sftp play.meadowsnetwork.tk'
