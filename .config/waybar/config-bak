@@ -5,8 +5,8 @@
     // "width": 1280, // Waybar width
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["wlr/workspaces", "hyprland/submap", "hyprland/scratchpad"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["custom/border", "cpu","custom/border", "memory","custom/border", "temperature","custom/border", "disk","custom/border","battery","custom/border","clock","custom/border", "tray"],
     "hyprland/window": {
         "format": "{}"

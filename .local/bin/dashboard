@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+term="kitty -e bash -c"
+
+case "$(printf "Disk\nPipeWire\nNetwork\nhyprpaper\nFixTilling\nRestartWaybar\nCombine-Sinks\nRestartPortal" | bemenu --fn 'JetBrains Mono 10' -c -B 3 -R 9 -f -n -M 500 -l 15 -p 'Dashboard' --bdr '#8311DB' --hb '#8311DB' --nb '#292929' --ab '#292929' --fb '#292929' --hf '#FAF9F9' --tb '#8311DB' --tf '#FAF9F9')" in
+
+	'Disk') $term "bash /home/$USER/.local/share/dashboard/scripts/hdd.bash"
+		;;
+  'PipeWire') killall pipewire && killalll pipewire-pulse && killall wireplumber & sleep 1 &&
+              pipewire && pipewire-pulse && wireplumber & notify-send "ReEnabled PipeWire"
+    ;;
+  'Network') nmd
+    ;;
+  'hyprpaper') killall hyprpaper && hyprpaper & notify-send "ReEnabled hyprpaper"
+    ;;
+  'FixTilling') hyprctl dispatch togglespecialworkspace & notify-send "Fixed Tilling"
+    ;;
+  'RestartWaybar') killall waybar && waybar
+    ;;
+  'Combine-Sinks') bash -c /home/$USER/.local/share/dashboard/scripts/combine-sink.bash
+    ;;
+  'RestartPortal') sh ~/.config/hypr/scripts/resetxdgportal.sh
+    ;;
+	*) exit 1
+esac
